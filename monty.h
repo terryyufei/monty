@@ -1,7 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
 
-extern int line_number;
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -38,20 +38,6 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
-void push(stack_t **stack, int value);
-void pall(stack_t **stack);
-void push(stack_t **stack, int value);
-void pall(stack_t **stack);
-void pint(stack_t **stack);
-void pop(stack_t **stack);
-void swap(stack_t **stack);
-void add(stack_t **stack);
-void nop(stack_t **stack);
-void free_stack(stack_t **stack);
-bool is_number(const char *str);
-void execute_instruction(char *instruction, stack_t **stack);
-size_t getline(char **lineptr, size_t *n, FILE *stream);
 
 
 #endif
