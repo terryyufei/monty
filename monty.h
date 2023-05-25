@@ -9,7 +9,15 @@
 #include <string.h>
 
 
+
 extern int info;
+
+/**
+ * struct cmd_s - cmd
+ * @fd: file descriptor
+ * @line: line
+ */
+
 typedef struct cmd_s
 {
 	FILE *fd;
@@ -30,9 +38,9 @@ extern int value;
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -45,22 +53,14 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 
 
-/** monty function*/
-
 void execute(char *argv);
 int get_opc(stack_t **stack, char *arg, char *val, int line_number);
-/**monty function option*/
-
-
-
-
-
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
@@ -73,36 +73,15 @@ void pchar(stack_t **stack, unsigned int line_number);
 void divide(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
-
-
-/**help **/
-
 int check_push(char *token);
-
 int get_value(char *token);
-
 char get_token(char *op, char *token);
-
-/** help **/
-
-
-/** stack func **/
-
 void _free(stack_t *stack);
 void clean_stack(stack_t **stack);
-
-
-
-
-/** error function */
 void usage_error(void);
 void open_error(char *file);
 void push_error(FILE *fd, char *line, stack_t *stack, int line_number);
 void instr_error(FILE *fd, char *line, stack_t *stack, char *val, int line_number);
-
-/** standard function*/
-
 int _isdigit(char *c);
-stack_t *new_Node(int n);
-
+stack_t *createNode(int n);
 #endif

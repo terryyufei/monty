@@ -1,11 +1,14 @@
 #include "monty.h"
+
 int value;
+
 /**
- * new_Node - create new node
- * @n: is a value
+ * createNode - creates a new node
+ * @n: the value of the node
  * Return: new node
  */
-stack_t *new_Node(int n)
+
+stack_t *createNode(int n)
 {
 	stack_t *new = NULL;
 
@@ -23,16 +26,17 @@ stack_t *new_Node(int n)
 }
 
 /**
- * push - Function that pushes an element to the stack.
- * @stack: stack
- * @line_number: is value
+ * push - pushes a new node with the given value to the stack
+ * @stack: double pointer to the head of the stack
+ * @line_number: value to be pushed
  */
+
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new = NULL;
 	(void)line_number;
 
-	new = new_Node(value);
+	new = createNode(value);
 
 	new->next = *stack;
 	if (*stack != NULL)
@@ -42,9 +46,8 @@ void push(stack_t **stack, unsigned int line_number)
 
 
 /**
- * pall - function that print all the values on the stack,
- * starting from the top of the stack.
- * @stack: node of stack linked list
+ * pall - prints all the values on the stack
+ * @stack: double pointer to the head of the stack
  * @line_number: the current line number
  */
 void pall(stack_t **stack, unsigned int line_number)
@@ -62,11 +65,11 @@ void pall(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pint - function that prints the value at the top of the stack,
- * followed by a new line.
- * @stack: node of stack linked list
+ * pint - prints the value at the top of the stack
+ * @stack: double pointer to the head of the stack
  * @line_number: the current line number
  */
+
 void pint(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack || !stack)
@@ -81,8 +84,8 @@ void pint(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pop - function tha print removes the top element of the stack.
- * @stack: node of stack linked list
+ * pop - removes the top element of the stack.
+ * @stack: double pointer to the head of the stack
  * @line_number: the current line number
  */
 void pop(stack_t **stack, unsigned int line_number)
