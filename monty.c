@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
- * main - monty program
+ * main - entry point
  * @argc: argument counter
- * @argv: argument value file name
- * Return: success or failure
+ * @argv: argument vector
+ * Return: success || failure
  */
 int main(int argc, char **argv)
 {
