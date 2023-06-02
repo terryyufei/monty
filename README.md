@@ -1,23 +1,26 @@
 # A GUIDE TO THE MONTY PROJECT
 
-* The knowledge of the data structures stacks and queues in C language, gives a base to build a C
-  program that acts as a Monty bytecode interpreter.
+     * The knowledge of the data structures stacks and queues in C language, gives a base to build a C
+       program that acts as a Monty bytecode interpreter.
 
 ## So what is a Monty bytecode interpreter ?
-* This is a C program that will take a file as an argument, open the file, and read the instructions in
-  the file, line by line and then go ahead and execute these instructions.
-* Monty bytecode is made up of special instructions and each line contains either just one
-  instruction or no instruction at all.
-Files containing Monty byte codes usually have .m extension.
-These special instructions are in the form of opcodes that are native to the Monty scripting language
-and each opcode performs a particular task or rather executes a particular functionality.
-Below is a table detailing each opcode and its subsequent operation.
-To successfully do this project you could essentially follow the steps below:
-Create a C program that accepts a file as an argument. Why ? Because To run our Monty byte code
-interpreter you will type the following command :
-./monty bytecode_file.m
-This means your C program has to first check whether the user provided a monty byte code file as
-an argument.
+     * This is a C program that will take a file as an argument, open the file, and read the instructions in
+       the file, line by line and then go ahead and execute these instructions.
+     * Monty bytecode is made up of special instructions and each line contains either just one
+       instruction or no instruction at all.
+     * Files containing Monty byte codes usually have .m extension.
+     * These special instructions are in the form of opcodes that are native to the Monty scripting language
+       and each opcode performs a particular task or rather executes a particular functionality.
+
+## Below is a table detailing each opcode and its subsequent operation.
+
+###  To successfully do this project you could essentially follow the steps below:
+
+     * Create a C program that accepts a file as an argument. Why ? Because To run our Monty byte code
+       interpreter you will type the following command :
+           * ./monty bytecode_file.m
+     * This means your C program has to first check whether the user provided a monty byte code file as
+       an argument.
 Your interpreter should therefore be expecting 2 arguments (the name of the program itself followed
 by the name or path to the file with the Monty bytecodes).
 This will be checked within your main function, whether argc=2. If not then,throw an error message
